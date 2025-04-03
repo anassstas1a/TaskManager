@@ -13,54 +13,60 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="controller">
-      <UniqueIdentifier>{5629b6c1-a40f-4e54-8786-2a99b19f6f7d}</UniqueIdentifier>
+    <Filter Include="src">
+      <UniqueIdentifier>{7bfd3106-4126-455f-9f4e-08907b4218d5}</UniqueIdentifier>
     </Filter>
-    <Filter Include="core">
-      <UniqueIdentifier>{5054c8d9-bb30-47e0-9657-1e11ce421295}</UniqueIdentifier>
+    <Filter Include="src\controller">
+      <UniqueIdentifier>{1431275b-787b-48e8-a781-afab85332fe5}</UniqueIdentifier>
     </Filter>
-    <Filter Include="dto">
-      <UniqueIdentifier>{6ded83eb-28c1-4eb8-8ded-60b5356a9493}</UniqueIdentifier>
+    <Filter Include="src\core">
+      <UniqueIdentifier>{6c987907-60c6-4413-a286-a49243fa308c}</UniqueIdentifier>
     </Filter>
-    <Filter Include="mapper">
-      <UniqueIdentifier>{d0edc278-a537-4cbb-951c-26d3eb5dfd4a}</UniqueIdentifier>
+    <Filter Include="src\dto">
+      <UniqueIdentifier>{4464071e-0305-4eb4-b1ab-da3b36d8c1cc}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ui">
-      <UniqueIdentifier>{e46f38e9-0e4c-426f-907d-5a761a551de2}</UniqueIdentifier>
+    <Filter Include="src\mapper">
+      <UniqueIdentifier>{3c75f172-e8d3-4242-9c52-f344697327ae}</UniqueIdentifier>
     </Filter>
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="App.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="core\Task.cpp">
-      <Filter>core</Filter>
-    </ClCompile>
-    <ClCompile Include="core\TaskManager.cpp">
-      <Filter>core</Filter>
-    </ClCompile>
+    <Filter Include="src\service">
+      <UniqueIdentifier>{6076c3d7-0a4f-4c59-b94d-422b998b2459}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\ui">
+      <UniqueIdentifier>{7b48e3ac-5aa6-473f-8a20-b2ac1ab32114}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="cpp.hint" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="AppComponent.hpp">
-      <Filter>Файлы заголовков</Filter>
+    <ClInclude Include="src\controller\TaskController.hpp">
+      <Filter>src\controller</Filter>
     </ClInclude>
-    <ClInclude Include="controller\TaskController.hpp">
-      <Filter>controller</Filter>
+    <ClInclude Include="src\core\Task.hpp">
+      <Filter>src\core</Filter>
     </ClInclude>
-    <ClInclude Include="core\Task.hpp">
-      <Filter>core</Filter>
+    <ClInclude Include="src\core\TaskManager.hpp">
+      <Filter>src\core</Filter>
     </ClInclude>
-    <ClInclude Include="core\TaskManager.hpp">
-      <Filter>core</Filter>
+    <ClInclude Include="src\dto\TaskDto.hpp">
+      <Filter>src\dto</Filter>
     </ClInclude>
-    <ClInclude Include="dto\TaskDto.hpp">
-      <Filter>dto</Filter>
+    <ClInclude Include="src\mapper\TaskMapper.hpp">
+      <Filter>src\mapper</Filter>
     </ClInclude>
-    <ClInclude Include="mapper\TaskMapper.hpp">
-      <Filter>mapper</Filter>
+    <ClInclude Include="src\service\AppComponent.hpp">
+      <Filter>src\service</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\core\Task.cpp">
+      <Filter>src\core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\TaskManager.cpp">
+      <Filter>src\core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\service\App.cpp">
+      <Filter>src\service</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

@@ -29,16 +29,6 @@ void run() {
 }
 #include OATPP_CODEGEN_END(ApiController)
 int main() {
-  /*oatpp::base::Environment::init();
-  std::cout << "Oat++ успешно подключен!" << std::endl;
-  oatpp::base::Environment::destroy();
-  int n = 100;
-  auto dbConnectionProvider =
-      std::make_shared<oatpp::postgresql::ConnectionProvider>(
-          "postgresql://user:password@localhost:5432/taskmanager");
-  auto dbExecutor =
-      std::make_shared<oatpp::postgresql::Executor>(dbConnectionProvider);*/
-
   oatpp::base::Environment::init();
   run();
   oatpp::base::Environment::destroy();
