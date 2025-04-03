@@ -11,4 +11,5 @@ class TaskDto : public oatpp::DTO {
   DTO_FIELD(String, description);
   DTO_FIELD(Boolean, isCompleted);
 };
+
 #include OATPP_CODEGEN_END(DTO)
