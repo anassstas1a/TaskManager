@@ -1,8 +1,8 @@
 #pragma once
-#include "AppComponent.h"
-#include "TaskDto.h"
-#include "TaskManager.h"
-#include "TaskMapper.h"
+#include "AppComponent.hpp"
+#include "core/TaskManager.hpp"
+#include "dto/TaskDto.hpp"
+#include "mapper/TaskMapper.hpp"
 #include "oatpp/core/macro/codegen.hpp"
 #include "oatpp/parser/json/mapping/ObjectMapper.hpp"
 #include "oatpp/web/server/api/ApiController.hpp"

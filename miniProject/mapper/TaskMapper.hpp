@@ -1,6 +1,6 @@
 #pragma once
-#include "Task.h"
-#include "TaskDto.h"
+#include "../core/Task.hpp"
+#include "../dto/TaskDto.hpp"
 
 class TaskMapper {
  public:

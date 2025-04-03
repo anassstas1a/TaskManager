@@ -1,18 +1,8 @@
 ﻿#include <iostream>
 
-#include "AppComponent.h"
-#include "TaskController.h"
+#include "AppComponent.hpp"
+#include "controller/TaskController.hpp"
 #include "oatpp/network/Server.hpp"
-// #include "TaskDto.h"
-// #include "oatpp-postgresql/ConnectionProvider.hpp"
-// #include "oatpp-postgresql/Executor.hpp"
-// #include "oatpp/core/macro/codegen.hpp"
-// #include "oatpp/core/macro/component.hpp"
-// #include "oatpp/network/tcp/server/ConnectionProvider.hpp"
-// #include "oatpp/parser/json/mapping/ObjectMapper.hpp"
-// #include "oatpp/web/server/HttpConnectionHandler.hpp"
-// #include "oatpp/web/server/HttpRouter.hpp"
-// #include "oatpp/web/server/api/ApiController.hpp"
 #include OATPP_CODEGEN_BEGIN(ApiController)
 void run() {
   AppComponent components;

@@ -13,39 +13,54 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="controller">
+      <UniqueIdentifier>{5629b6c1-a40f-4e54-8786-2a99b19f6f7d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="core">
+      <UniqueIdentifier>{5054c8d9-bb30-47e0-9657-1e11ce421295}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="dto">
+      <UniqueIdentifier>{6ded83eb-28c1-4eb8-8ded-60b5356a9493}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="mapper">
+      <UniqueIdentifier>{d0edc278-a537-4cbb-951c-26d3eb5dfd4a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ui">
+      <UniqueIdentifier>{e46f38e9-0e4c-426f-907d-5a761a551de2}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="App.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="Task.cpp">
-      <Filter>Исходные файлы</Filter>
+    <ClCompile Include="core\Task.cpp">
+      <Filter>core</Filter>
     </ClCompile>
-    <ClCompile Include="TaskManager.cpp">
-      <Filter>Исходные файлы</Filter>
+    <ClCompile Include="core\TaskManager.cpp">
+      <Filter>core</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="cpp.hint" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Task.h">
+    <ClInclude Include="AppComponent.hpp">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="TaskManager.h">
-      <Filter>Файлы заголовков</Filter>
+    <ClInclude Include="controller\TaskController.hpp">
+      <Filter>controller</Filter>
     </ClInclude>
-    <ClInclude Include="TaskController.h">
-      <Filter>Файлы заголовков</Filter>
+    <ClInclude Include="core\Task.hpp">
+      <Filter>core</Filter>
     </ClInclude>
-    <ClInclude Include="TaskDto.h">
-      <Filter>Файлы заголовков</Filter>
+    <ClInclude Include="core\TaskManager.hpp">
+      <Filter>core</Filter>
     </ClInclude>
-    <ClInclude Include="TaskMapper.h">
-      <Filter>Файлы заголовков</Filter>
+    <ClInclude Include="dto\TaskDto.hpp">
+      <Filter>dto</Filter>
     </ClInclude>
-    <ClInclude Include="AppComponent.h">
-      <Filter>Файлы заголовков</Filter>
+    <ClInclude Include="mapper\TaskMapper.hpp">
+      <Filter>mapper</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
