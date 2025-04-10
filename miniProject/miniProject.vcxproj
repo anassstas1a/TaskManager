@@ -139,12 +139,16 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <None Include="cpp.hint" />
+    <None Include="frontend\index.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\controller\TaskController.hpp" />
     <ClInclude Include="src\core\Task.hpp" />
     <ClInclude Include="src\core\TaskManager.hpp" />
     <ClInclude Include="src\dto\TaskDto.hpp" />
+    <ClInclude Include="src\interceptor\CorsInterceptor.hpp" />
     <ClInclude Include="src\mapper\TaskMapper.hpp" />
     <ClInclude Include="src\service\AppComponent.hpp" />
   </ItemGroup>

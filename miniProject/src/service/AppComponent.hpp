@@ -1,5 +1,6 @@
 #pragma once
 #include "core/TaskManager.hpp"
+#include "interceptor/CorsInterceptor.hpp"
 #include "oatpp/core/macro/component.hpp"
 #include "oatpp/network/tcp/server/ConnectionProvider.hpp"
 #include "oatpp/parser/json/mapping/ObjectMapper.hpp"
@@ -16,14 +17,25 @@ class AppComponent {
 
   OATPP_CREATE_COMPONENT(std::shared_ptr<oatpp::web::server::HttpRouter>,
                          httpRouter)([] {
-    return oatpp::web::server::HttpRouter::createShared();
+    auto router = oatpp::web::server::HttpRouter::createShared();
+    return router;
+  }());
+
+  OATPP_CREATE_COMPONENT(std::shared_ptr<CorsInterceptor>, corsInterceptor)([] {
+    return std::make_shared<CorsInterceptor>();
   }());
 
   OATPP_CREATE_COMPONENT(std::shared_ptr<oatpp::network::ConnectionHandler>,
                          serverConnectionHandler)([] {
     OATPP_COMPONENT(std::shared_ptr<oatpp::web::server::HttpRouter>,
                     httpRouter);
-    return oatpp::web::server::HttpConnectionHandler::createShared(httpRouter);
+    auto handler =
+        oatpp::web::server::HttpConnectionHandler::createShared(httpRouter);
+
+    OATPP_COMPONENT(std::shared_ptr<CorsInterceptor>, corsInterceptor);
+    handler->addRequestInterceptor(corsInterceptor);
+
+    return handler;
   }());
 
   OATPP_CREATE_COMPONENT(std::shared_ptr<oatpp::data::mapping::ObjectMapper>,

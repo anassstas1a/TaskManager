@@ -1,0 +1,134 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <title>Task Manager</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 40px auto;
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 12px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        input {
+            padding: 10px;
+            width: 70%;
+            font-size: 16px;
+        }
+
+        button {
+            padding: 10px 14px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .task {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 10px;
+            background: #fff;
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        .completed {
+            text-decoration: line-through;
+            color: gray;
+        }
+
+        #taskList {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>📝 Task Manager</h1>
+
+    <input type="text" id="taskInput" placeholder="Введите задачу..." />
+    <button onclick="addTask()">Добавить</button>
+
+    <div id="taskList"></div>
+
+    <script>
+        const API = "http://localhost:8000/tasks";
+
+        async function fetchTasks() {
+            const res = await fetch(API);
+            const tasks = await res.json();
+            renderTasks(tasks);
+        }
+
+        async function addTask() {
+            const input = document.getElementById("taskInput");
+            const description = input.value.trim();
+            if (!description) return;
+
+            const res = await fetch(API, {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ description })
+            });
+
+            if (res.ok) {
+                input.value = "";
+                await fetchTasks();
+            } else {
+                alert("Ошибка при добавлении задачи");
+            }
+        }
+
+        async function completeTask(id) {
+            await fetch(`${API}/${id}/complete`, { method: "PUT" });
+            fetchTasks();
+        }
+
+        async function deleteTask(id) {
+            await fetch(`${API}/${id}`, { method: "DELETE" });
+            fetchTasks();
+        }
+
+        function renderTasks(tasks) {
+            const container = document.getElementById("taskList");
+            container.innerHTML = "";
+
+            tasks.forEach(task => {
+                const div = document.createElement("div");
+                div.className = "task";
+
+                const span = document.createElement("span");
+                span.innerText = task.description;
+                if (task.isCompleted) span.classList.add("completed");
+
+                const actions = document.createElement("div");
+
+                const doneBtn = document.createElement("button");
+                doneBtn.innerText = "✅";
+                doneBtn.onclick = () => completeTask(task.id);
+
+                const deleteBtn = document.createElement("button");
+                deleteBtn.innerText = "🗑";
+                deleteBtn.onclick = () => deleteTask(task.id);
+
+                actions.appendChild(doneBtn);
+                actions.appendChild(deleteBtn);
+
+                div.appendChild(span);
+                div.appendChild(actions);
+                container.appendChild(div);
+            });
+        }
+
+        fetchTasks();
+    </script>
+</body>
+</html>

@@ -26,6 +26,7 @@ class TaskController : public oatpp::web::server::api::ApiController {
     return std::make_shared<TaskController>(objectMapper, taskManager);
   }
 
+  ADD_CORS(getTasks)
   ENDPOINT("GET", "/tasks", getTasks) {
     auto tasks = taskManager->getTasks();
     auto dtoList = oatpp::List<oatpp::Object<TaskDto>>::createShared();
@@ -36,11 +37,13 @@ class TaskController : public oatpp::web::server::api::ApiController {
     return createDtoResponse(Status::CODE_200, dtoList);
   }
 
+  ADD_CORS(createTask)
   ENDPOINT("POST", "/tasks", createTask, BODY_DTO(Object<TaskDto>, taskDto)) {
     taskManager->addTask(taskDto->description);
     return createResponse(Status::CODE_201, "Task created");
   }
 
+  ADD_CORS(completeTask)
   ENDPOINT("PUT", "/tasks/{id}/complete", completeTask, PATH(Int32, id)) {
     bool success = taskManager->completeTask(id);
     if (success) {
@@ -50,6 +53,7 @@ class TaskController : public oatpp::web::server::api::ApiController {
     }
   }
 
+  ADD_CORS(deleteTask)
   ENDPOINT("DELETE", "/tasks/{id}", deleteTask, PATH(Int32, id)) {
     bool success = taskManager->deleteTask(id);
     if (success) {
