@@ -34,6 +34,9 @@
     <Filter Include="src\interceptor">
       <UniqueIdentifier>{c4863369-458b-4fde-840f-bb0498567ca5}</UniqueIdentifier>
     </Filter>
+    <Filter Include="assets">
+      <UniqueIdentifier>{86cb22e5-79a5-4910-89fa-dfa4ae5f63f2}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="index.htm" />
@@ -71,5 +74,13 @@
     <ClCompile Include="src\service\App.cpp">
       <Filter>src\service</Filter>
     </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="assets\TaskManager_image.png">
+      <Filter>assets</Filter>
+    </Image>
+    <Image Include="assets\TaskManager_gif.gif">
+      <Filter>assets</Filter>
+    </Image>
   </ItemGroup>
 </Project>

@@ -156,6 +156,10 @@
     <ClCompile Include="src\core\TaskManager.cpp" />
     <ClCompile Include="src\service\App.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <Image Include="assets\TaskManager_gif.gif" />
+    <Image Include="assets\TaskManager_image.png" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
