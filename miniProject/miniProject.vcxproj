@@ -138,8 +138,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <None Include="cpp.hint" />
-    <None Include="frontend\index.htm">
+    <None Include="index.htm">
       <DeploymentContent>true</DeploymentContent>
     </None>
   </ItemGroup>

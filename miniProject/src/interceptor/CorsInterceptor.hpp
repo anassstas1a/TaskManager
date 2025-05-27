@@ -9,7 +9,7 @@ class CorsInterceptor
     auto response = OutgoingResponse::createShared(
         oatpp::web::protocol::http::Status::CODE_200, nullptr);
 
-    response->putHeader("Access-Control-Allow-Origin", "*");
+    response->putHeader("Access-Control-Allow-Origin", "http://localhost:3000");
     response->putHeader("Access-Control-Allow-Methods",
                         "GET, POST, PUT, DELETE, OPTIONS");
     response->putHeader("Access-Control-Allow-Headers", "Content-Type");

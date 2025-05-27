@@ -34,15 +34,9 @@
     <Filter Include="src\interceptor">
       <UniqueIdentifier>{c4863369-458b-4fde-840f-bb0498567ca5}</UniqueIdentifier>
     </Filter>
-    <Filter Include="frontend">
-      <UniqueIdentifier>{2dad992e-a27a-4b10-96a9-a264c39ca7f8}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <None Include="cpp.hint" />
-    <None Include="frontend\index.htm">
-      <Filter>frontend</Filter>
-    </None>
+    <None Include="index.htm" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\controller\TaskController.hpp">
